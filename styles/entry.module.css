@@ -1,0 +1,62 @@
+/* styles/entry.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap");
+
+.screenWrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  width: 95%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.0); /* optional for contrast */
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.0);
+}
+
+.logo {
+  width: 250px;
+  margin: 5px 15px 6rem;
+  margin-top: 1.7rem;
+  display: block;
+}
+
+.button {
+  background: linear-gradient(135deg, #4c3cff, #8277ff, #cf6aff);
+  color: white;
+  width: 100%;
+  padding: 0.5rem 1.8rem;
+  font-size: 1rem;
+  text-align: center;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  margin-top: 0.1rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+  line-height: 1.3;
+}

@@ -1,0 +1,96 @@
+.screenWrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: #222525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+    width: 100vw;
+
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  background: url('/background.gif') no-repeat center center;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.4rem;
+  background-color: rgba(255, 255, 255, 0.0); /* optional for contrast */
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.0);
+}
+
+.logo {
+  width: 300px;
+  margin: 50px -7px 7.5rem;
+  display: block;
+}
+
+.inputGlass {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  line-height: 1.4;
+  direction: rtl;
+  text-align: right;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: white;
+  box-shadow: inset 1px 1px 4px rgba(255, 255, 255, 0.05),
+              inset -1px -1px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.inputGlass::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.inputGlass:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.rotating-button {
+  width: flex;
+  height: 90px;
+  border-radius: 3rem;
+  outline: none;
+  background: linear-gradient(#8268cf, black) padding-box,
+    conic-gradient(
+      from var(--angle, 0deg),
+      transparent,
+      white 10%,
+      transparent 20%
+    ) border-box;
+  border: 2px solid transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.error {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ff5f5f;
+}

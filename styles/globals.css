@@ -1,0 +1,189 @@
+/* ============================
+   General Reset & Typography
+============================ */
+* {
+  box-sizing: border-box;
+  font-family: 'Almarai', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================
+   Full Viewport Setup
+============================ */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Almarai', sans-serif;
+  overflow: hidden;
+
+  /* ✅ Fallback solid background */
+  background-color: #0b1526;
+
+  /* ✅ Animated gradient layer */
+  background-image: linear-gradient(-15deg, #102952, #00152a, #102952, #249fb5);
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Adjust to 0.3–0.7 for balance */
+  z-index: 0.5; /* lower than content, higher than background */
+  pointer-events: none;
+}
+/* ============================
+   Layout Wrappers
+============================ */
+.screen-wrapper,
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.glass-root,
+.app-container,
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+/* ============================
+   Auth Card Wrapper
+============================ */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: rgba(31, 31, 37, 0.85);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ============================
+   Logo & Inputs
+============================ */
+.logo {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.input::placeholder {
+  color: #ccc;
+}
+
+/* ============================
+   Alerts & Errors
+============================ */
+.error {
+  color: red;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.match-green {
+  color: #1f1f21 !important;
+}
+
+/* ============================
+   Buttons
+============================ */
+button,
+input {
+  touch-action: manipulation;
+}
+
+button.rotating-button {
+  width: 100%;
+  height: 60px;
+  border-radius: 1.2rem;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  background: linear-gradient(#6285ed, black) padding-box,
+              conic-gradient(from var(--angle, 0), transparent, white 15%, transparent 20%) border-box;
+  border: 1px solid transparent;
+  transition: background 0.5s ease;
+}
+
+button.rotating-button:hover {
+  transform: scale(1.05);
+}
+.voice-bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 18px;
+  backdrop-filter: blur(5px);
+  background: rgba(60, 179, 113, 0.15); /* WhatsApp light green tint */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  position: relative;
+  word-break: break-word;
+  transition: all 0.2s ease-in-out;
+}
+
+.voice-bubble.sent {
+  align-self: flex-end;
+  background: rgba(0, 128, 0, 0.2);
+  border-top-right-radius: 0;
+}
+
+.voice-bubble.received {
+  align-self: flex-start;
+  background: rgba(200, 200, 200, 0.2);
+  border-top-left-radius: 0;
+}
+
+.audio-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+  text-align: right;
+}

@@ -1,0 +1,115 @@
+.screenWrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: #222525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.dashboardWrapper {
+  padding: 2rem;
+  font-family: 'Almarai', sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerActions button {
+  margin-left: 0.5rem;
+}
+.tableWrapper {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.requested {
+  background-color: #ffe58f;
+  color: #ad6800;
+}
+
+.status-badge.assigned {
+  background-color: #91d5ff;
+  color: #0050b3;
+}
+
+.status-badge.completed {
+  background-color: #b7eb8f;
+  color: #237804;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #888;
+}
+.empty-message {
+  text-align: center;
+  margin: 40px auto;
+  font-size: 16px;
+  color: #aaa;
+}
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.requested {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.assigned {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.actionBtn {
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.actionBtn:hover {
+  background-color: #e0e0e0;
+}
+
+.cancelBtn {
+  background-color: #fdd;
+  color: #a00;
+}
