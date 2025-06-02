@@ -8,10 +8,12 @@ import { useEffect } from 'react';
 export default function App({ Component, pageProps }: AppProps) {
   // Register Service Worker
   useEffect(() => {
-    // Skip Service Worker registration in StackBlitz or similar environments
-    const isStackBlitz = typeof window !== 'undefined' && 
-      (window.location.hostname.includes('stackblitz') || 
-       window.location.hostname.includes('webcontainer.io'));
+    // Skip Service Worker registration in StackBlitz, similar environments, or iframes
+    const isStackBlitz = typeof window !== 'undefined' && (
+      window.location.hostname.includes('stackblitz') || 
+      window.location.hostname.includes('webcontainer.io') ||
+      window.self !== window.top // Check if running in an iframe
+    );
 
     if ('serviceWorker' in navigator && !isStackBlitz) {
       navigator.serviceWorker
