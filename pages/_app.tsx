@@ -8,7 +8,12 @@ import { useEffect } from 'react';
 export default function App({ Component, pageProps }: AppProps) {
   // Register Service Worker
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
+    // Skip Service Worker registration in StackBlitz or similar environments
+    const isStackBlitz = typeof window !== 'undefined' && 
+      (window.location.hostname.includes('stackblitz') || 
+       window.location.hostname.includes('webcontainer.io'));
+
+    if ('serviceWorker' in navigator && !isStackBlitz) {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then(reg => console.log('✅ Service Worker registered:', reg))
@@ -54,12 +59,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
       {/* 🎯 No video — CSS gradient handles background */}
       <NextUIProvider>
-
         <div className="glass-root" style={{ position: 'relative', zIndex: 1 }}>
-
           <Component {...pageProps} />
         </div>
-
       </NextUIProvider>
     </>
   );
